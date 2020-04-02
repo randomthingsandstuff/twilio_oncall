@@ -7,7 +7,8 @@ This is a set of twilio functions scripts to implement multiple on-call extensio
 ## How to set it up
 1. Add the scripts to the appropriate paths (Twilio functions)
 2. Set the configuration envvars (Twilio functions)
-3. Setup the DID to point to the main menu (Programmable voice)
+3. MAKE SURE ALL SCRIPTS HAVE "Check for valid Twilio signature" CHECKED!$%^&*(*&^%$%^
+4. Setup the DID to point to the main menu (Programmable voice)
 
 ## Configuration envvars
 - CONFIG_URL -> The URL with the extension to numbers mapping
