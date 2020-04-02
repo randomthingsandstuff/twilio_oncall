@@ -11,7 +11,7 @@ This is a set of twilio functions scripts to implement multiple on-call extensio
 
 ## Configuration envvars
 CONFIG_URL -> The URL with the extension to numbers mapping
-MAX_MENULOOPITER -> How many times the menu will prompt before it bails out
+MAX_MENULOOPITER -> How many times the menu will prompt before it bails out (I do something like 5)
 
 ## CONFIG_URL JSON format:
 
