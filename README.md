@@ -23,8 +23,6 @@ Its a dictionary mapping a string extension to a list of string phone numbers (i
   "9844": [ "+317044000", "+12145550101"] }
 ```
 
-Twilio honors cache-control header, so you should be able to cache this response if it matters to your application.
-
 If you really don't like having some URL for twilio to pick this up from, the dictionary is picked up in mainmenu.js and rroncall.js
 
 ## Operation
