@@ -1,5 +1,5 @@
 exports.handler = function(context, event, callback) {
- 	let twiml = new Twilio.twiml.VoiceResponse();
+    let twiml = new Twilio.twiml.VoiceResponse();
     if (event.response == 1) {
         switch (event.Digits) {
 	    case '1':

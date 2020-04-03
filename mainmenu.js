@@ -30,22 +30,27 @@ function getExten(context, event, callback, invmsg) {
     let msg = "";
     if (invmsg) {
         msg += "Invalid extension... ";
-        if (menuloopiter > context.MAX_MENULOOPITER) {
-            msg += "Too many attempts... Goodbye!";
-            twiml.say(msg);
-            callback(null, twiml);
-            return;
-        }
+    }
+    if (menuloopiter > context.MAX_MENULOOPITER) {
+        msg += "Too many attempts... Goodbye!";
+        twiml.say(msg);
+        callback(null, twiml);
+        return;
+    }
+    if (invmsg) {
         msg += "Please try again....";
     }
     msg += "Please enter the extension you wish to reach.";
-    twiml.gather({numDigits: 4, action: "/mainmenu?menuloopiter=" + menuloopiter}).say(msg);
+    let nextUrl = "/mainmenu?menuloopiter=" + menuloopiter;
+    twiml.gather({numDigits: 4, action: nextUrl, timeout:10}).say(msg);
+    twiml.redirect(nextUrl);
     callback(null, twiml);
 }
 
 function routeExten(context, event, callback, extenmap) {
     var exten = event.Digits;
     if (!(exten in extenmap)) {
+        console.log("Got extension " + exten);
         getExten(context, event, callback, true);
         return;
     }
